@@ -1,88 +1,129 @@
-/* Reset básico */
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fondo degradado original */
-    background: linear-gradient(135deg, #c3ec52, #0ba360);
-    color: #fff;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    transition: background 0.5s ease; /* Transición suave para el modo oscuro */
+    min-height: 100vh;
+    transition: background 0.5s ease;
 }
 
-/* Contenedor */
+/* Modo Fuego (Activado por JS) */
+body.modo-fuego {
+    background: linear-gradient(180deg, #121212 0%, #d35400 100%);
+}
+
 .container {
+    background-color: #1e1e1e;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    max-width: 500px;
-    transition: background-color 0.5s ease;
+    max-width: 600px;
+    width: 90%;
+    border-top: 5px solid #ffbb33;
 }
 
-/* Header */
 header h1 {
-    font-size: 2.2em;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    letter-spacing: -2px;
+}
+
+header h1 span {
+    color: #ffbb33;
 }
 
 header p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+    color: #aaa;
+    margin-bottom: 2rem;
+    font-family: Arial, sans-serif;
 }
 
-/* Main */
-main p {
-    margin: 15px 0;
-    font-size: 1.1em;
+/* Tarjetas de servicios */
+.services {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2rem;
 }
 
-.icon {
-    width: 80px;
-    margin-bottom: 20px;
-}
-
-/* Estilo de los botones */
-button {
-    padding: 12px 20px;
-    font-size: 0.9em;
-    background-color: #ffbb33;
-    color: #333;
-    border: none;
+.service-card {
+    background-color: #2a2a2a;
+    padding: 15px;
     border-radius: 10px;
+    flex: 1;
+}
+
+.service-card h3 {
+    color: #ffbb33;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.service-card p {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* Sección de membresía */
+.membership-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #252525;
+    border-radius: 10px;
+}
+
+.plan-selector button {
+    background-color: transparent;
+    border: 2px solid #ffbb33;
+    color: #ffbb33;
+    padding: 8px 15px;
+    margin: 10px 5px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    margin: 5px; /* Espacio entre botones */
+}
+
+.plan-selector button:hover {
+    background-color: #ffbb33;
+    color: #121212;
+}
+
+#mensaje-plan {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+/* Botón de acción principal */
+.btn-cta {
+    background-color: #ffbb33;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
     font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:hover {
-    background-color: #ffdd66;
-    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+.btn-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 187, 51, 0.4);
 }
 
-/* Footer */
 footer {
-    margin-top: 30px;
-    font-size: 0.8em;
-    color: #eee;
-}
-
-/* --- AJUSTES PARA MODO OSCURO --- */
-body.dark-mode {
-    background: linear-gradient(135deg, #2c3e50, #000000);
-}
-
-.dark-mode .container {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: #555;
+    font-family: sans-serif;
 }
