@@ -3,72 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por asistir</title>
+    <title>PowerGym | Tu Transformación Inicia Aquí</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            transition: background-color 0.3s;
-        }
-        button {
-            padding: 10px 15px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        /* Clases que se activan con JavaScript */
-        .dark-mode {
-            background-color: #1a1a1a;
-            color: #f0f0f0;
-        }
-    </style>
 </head>
 <body>
-    <div class="container" id="contenedor-principal">
+    <div class="container" id="main-container">
         <header>
-            <h1>¡Gracias por asistir al taller!</h1>
-            <p>Esperamos que hayas disfrutado aprendiendo GitHub.</p>
+            <h1>POWER<span>GYM</span></h1>
+            <p>Supera tus límites, alcanza tus metas.</p>
         </header>
 
         <main>
-            <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Taller" class="icon" style="width: 100px;">
-            <p>Recuerda practicar los conceptos: <strong>Fork, Commit, Pull Request</strong></p>
-            
-            <button onclick="alert('¡Sigue practicando! 🚀')">Haz clic aquí</button>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Musculación</h3>
+                    <p>Equipos de última generación.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cardio</h3>
+                    <p>Mejora tu resistencia física.</p>
+                </div>
+            </div>
 
-            <button onclick="cambiarModoOscuro()">Cambiar a Modo Oscuro 🌙</button>
+            <div class="membership-section">
+                <h2>Elige tu Plan</h2>
+                <div class="plan-selector">
+                    <button onclick="seleccionarPlan('Básico', '$29')">Plan Básico</button>
+                    <button onclick="seleccionarPlan('Premium', '$49')">Plan Premium</button>
+                </div>
+                <p id="mensaje-plan">Selecciona un plan para ver los detalles.</p>
+            </div>
 
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ccc;">
-                <p>Nivel de motivación para programar: <strong id="contador">0</strong>%</p>
-                <button onclick="aumentarMotivacion()">¡Aumentar motivación! 🔥</button>
+            <div class="actions">
+                <button class="btn-cta" onclick="toggleModoFuego()">Modo Entrenamiento 🔥</button>
             </div>
         </main>
 
-        <footer style="margin-top: 40px;">
-            <p>© 2026 Taller Básico de GitHub</p>
+        <footer>
+            <p>© 2026 PowerGym - Proyecto de prueba en Vercel</p>
         </footer>
     </div>
 
     <script>
-        // Función para cambiar el tema de la página
-        function cambiarModoOscuro() {
-            document.body.classList.toggle('dark-mode');
+        // Función para mostrar el plan seleccionado
+        function seleccionarPlan(nombre, precio) {
+            const mensaje = document.getElementById('mensaje-plan');
+            mensaje.innerHTML = `Has elegido el <strong>${nombre}</strong> por solo <strong>${precio}/mes</strong>.`;
+            mensaje.style.color = "#ffbb33";
         }
 
-        // Función para sumar números en la página
-        let motivacion = 0;
-        function aumentarMotivacion() {
-            if (motivacion < 100) {
-                motivacion += 10;
-                document.getElementById('contador').innerText = motivacion;
-            } else {
-                alert('¡Ya estás al 100% de motivación! ¡A programar! 💻');
+        // Función para cambiar el estilo visual de la página (Modo Fuego)
+        function toggleModoFuego() {
+            document.body.classList.toggle('modo-fuego');
+            const titulo = document.querySelector('h1 span');
+            if (document.body.classList.contains('modo-fuego')) {
+                alert('¡Modo Entrenamiento Activado! ¡A darle con todo! 💪');
             }
         }
     </script>
