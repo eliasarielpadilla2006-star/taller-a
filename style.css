@@ -1,0 +1,88 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fondo degradado original */
+    background: linear-gradient(135deg, #c3ec52, #0ba360);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.5s ease; /* Transición suave para el modo oscuro */
+}
+
+/* Contenedor */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    max-width: 500px;
+    transition: background-color 0.5s ease;
+}
+
+/* Header */
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Main */
+main p {
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.icon {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los botones */
+button {
+    padding: 12px 20px;
+    font-size: 0.9em;
+    background-color: #ffbb33;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px; /* Espacio entre botones */
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffdd66;
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #eee;
+}
+
+/* --- AJUSTES PARA MODO OSCURO --- */
+body.dark-mode {
+    background: linear-gradient(135deg, #2c3e50, #000000);
+}
+
+.dark-mode .container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
